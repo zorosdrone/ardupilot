@@ -25,6 +25,9 @@ bool ModeAltHold::init(bool ignore_checks)
 // should be called at 100hz or more
 void ModeAltHold::run()
 {
+    // Say Hello
+    // gcs().send_text(MAV_SEVERITY_CRITICAL, "Hello Ardupilot from AltHold!");
+
     // set vertical speed and acceleration limits
     pos_control->D_set_max_speed_accel_m(get_pilot_speed_dn_ms(), get_pilot_speed_up_ms(), get_pilot_accel_D_mss());
 
