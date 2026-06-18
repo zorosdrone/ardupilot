@@ -37,9 +37,11 @@ Mode *Copter::mode_from_mode_num(const Mode::Number mode)
         case Mode::Number::ACRO:
             return &mode_acro;
 #endif
-
         case Mode::Number::STABILIZE:
             return &mode_stabilize;
+
+        case Mode::Number::MYFIRST:
+            return &mode_myfirst;
 
         case Mode::Number::ALT_HOLD:
             return &mode_althold;
@@ -185,6 +187,7 @@ bool Copter::gcs_mode_enabled(const Mode::Number mode_num)
 {
     // List of modes that can be blocked, index is bit number in parameter bitmask
     static const uint8_t mode_list [] {
+        (uint8_t)Mode::Number::MYFIRST,
         (uint8_t)Mode::Number::STABILIZE,
         (uint8_t)Mode::Number::ACRO,
         (uint8_t)Mode::Number::ALT_HOLD,
